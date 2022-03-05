@@ -1,0 +1,59 @@
+.settings-main-div {
+    width: 212px;
+    height: 249px;
+    background-color: white;
+    position: absolute;
+    right: 15px;
+    top: 60px;
+    padding-top: 10px;
+    transition-duration: 2s;
+    transition-delay: 2s;
+    color: #131616;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.settings-items {
+    display: flex;
+    width: 100%;
+    padding-left: 4px;
+    height: 22%;
+    padding-top: 7px;
+    margin-bottom: 10px;
+    transition-duration: .2s;
+    border-bottom: 1px solid #0002;
+}
+.settings-items:hover{
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+#settings_aboutUs{
+    
+    justify-content: center;
+    text-align: center; 
+    align-items: center;
+    flex:1;
+    color:#131616;
+}
+.settings-items-heading {
+    width: 50%;
+    font-size: 1.6vw;
+    font-family: system-ui;
+    color:#131616;
+}
+
+#settings_aboutUs img{
+    width: 26%;
+}
+
+.items-underline{
+    color: #0002;
+    border: 1px solid;
+    width: 82%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 17px;
+    margin-top: 1%;
+
+}

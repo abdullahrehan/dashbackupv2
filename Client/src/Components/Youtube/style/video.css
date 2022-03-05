@@ -1,0 +1,24 @@
+.video-item {
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer;
+}
+
+.video-item.item img {
+    max-width: 200px;
+    max-height: 250px ;
+}
+
+.ytp-pause-overlay {
+    display: none !important;
+}
+
+.ytp-button{
+    display: none;
+}
+.ytp-fullscreen-button-corner-0, .ytp-fullscreen-button-corner-1, .ytp-fullscreen-button-corner-2, .ytp-fullscreen-button-corner-3 {
+    -webkit-transform: none;
+    display: none;
+    transform: none;
+    background-color: black;
+}

@@ -1,0 +1,34 @@
+
+#DemoAccountDiv {
+    position: fixed;
+    background-color: #242424;
+    width: 23vw;
+    height: 80vh;
+    left: 38%;
+    top: 16%;
+    color: white;
+}
+
+#accountIcon{
+    position: relative;
+    left: 18%;
+}
+
+#welcomeLine {
+    font-size: 1.4vw;
+    justify-content: center;
+    padding-top: 6%;
+    font-weight: 500;
+    position: relative;
+    top:1%;
+    left: 1%;
+}
+#feedbackLine {
+    font-size: 1vw;
+    font-family: cursive;
+    justify-content: center;
+    padding-top: 6%;
+    position: relative;
+    top: -1%;
+    left: 2%;
+    color: darkorange;}

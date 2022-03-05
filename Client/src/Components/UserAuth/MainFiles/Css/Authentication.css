@@ -1,0 +1,92 @@
+.auth-page {
+    width: 100%;
+    height: 93%;
+    z-index: 4;
+    position: fixed;
+    top: 64px;
+}
+
+.auth-form{
+    width: 22vw;
+    height: 95vh;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+    left: 38vw;
+    display: grid;
+    grid-gap: .7%;
+    grid-template-rows:8% 7% 7% 7% 5% 10% 10% 10% 6% 8%;
+    grid-template-columns: 100%;
+    background-color: #0000;
+}
+
+.authform-firstdiv{
+
+    grid-row:2/3;
+    text-align: center;
+    height: 8%;
+}
+
+.authform-secoundDiv{
+    
+    grid-row:3/4;
+    text-align: center;
+    height: 8%;
+    margin-top: 4px;
+
+}
+
+.authform-thirdDiv{
+
+    grid-row:4/5;
+    font-size: smaller;
+    text-align: center;
+    color: coral;
+    height: 8%;
+    margin-top:5px
+
+}
+
+.authform-tabsDiv{
+
+    grid-row:6/7;
+    height: 100%;
+    border-bottom: 2px solid white;
+    font-size: 1.4vw;
+    color: white;
+    position: relative;
+    height: 8%;
+}
+
+.signin-title{
+
+    position: absolute;
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    top: -0%;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.login-title{
+
+    position: absolute;   
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    top: -0%;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.formBtnDesign{
+
+    height: 100%;
+    width: 88%;
+    font-size: 1.4vw;
+    position: relative;
+
+}

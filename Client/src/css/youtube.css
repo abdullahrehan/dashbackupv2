@@ -1,0 +1,74 @@
+.youtube-main-div{
+    width: 680px;
+    height: 541px;
+    margin-right: 45px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+#Youtube-Main{
+    overflow-x: hidden;
+
+}
+
+
+.youtube-main-div::-webkit-scrollbar{
+
+    border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #0000;
+    cursor: pointer;
+
+}
+
+.youtube-main-div::-webkit-scrollbar-track{
+
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #0000;
+    cursor: pointer;
+
+}
+
+.youtube-main-div::-webkit-scrollbar-thumb{
+
+    border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: teal;
+    cursor: pointer;
+
+}
+
+.youtube-main-div::-webkit-scrollbar {
+    
+    width: 10px;
+    cursor: pointer;
+
+}
+
+#youtube-text{
+    margin-top: 0;
+    color: black;
+    font-size: 21.9px;
+    width: 82px;
+    height: 30px;
+    background: orangered;
+    border-radius: 8px;
+    font-family: none;
+    font-weight: 600;
+    margin-left: 7px;
+    padding-left: 2px;
+    margin-bottom: 0px;
+}
+#youtube-icon{
+    position: absolute;
+    bottom: 52px;
+    left: 7px;
+    cursor: pointer;
+    color: white;
+    z-index: 1;
+}
+#youtube-icon:hover{
+    color: cadetblue;
+
+}

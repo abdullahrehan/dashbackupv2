@@ -1,0 +1,37 @@
+#video-search{
+    width: 90%;
+    height: 35px;
+}
+.ui {
+    margin-top: 3px;
+    padding-bottom: 6px;
+    margin-left: 15px;
+
+    color: white;
+    width: inherit;
+    /* height: inherit; */
+}
+.embed{
+    height: inherit;
+}
+.five{
+}
+.content{
+    margin-left: 8px;
+}
+#iframe{
+    width: inherit;
+    height: inherit;
+}
+#full-screen-btn{
+    color: white;
+    position: absolute;
+    right: 5%;
+    bottom: 6%;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ytp-button{
+    display: none;
+}

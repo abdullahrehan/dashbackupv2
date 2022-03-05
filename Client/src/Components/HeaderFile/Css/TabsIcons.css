@@ -1,0 +1,55 @@
+.tabIcons {
+    display: flex;
+    flex: 3;
+}
+
+.icons-div {
+    position: relative;
+    color:white;
+    cursor:pointer;
+    padding:4px;
+    font-size: 2.4vw;
+}
+.links{
+   padding-left: 10px; 
+}
+
+.notesIcon {
+    width: 2.5rem;
+    position: relative;
+    bottom: 4px;
+}
+
+.messageIcon {
+    width: 2.5rem;
+    position: relative;
+    right: 2px;
+    bottom: 0px;
+
+}
+
+.active{
+    border-bottom: 2px solid white;
+}
+
+.imageIcon{
+    width: 14%;
+    position: relative;
+    bottom: 4px;
+}
+
+.fileIcon{
+    width: 2.2rem;
+    position: relative;
+    bottom: 4px;
+}
+
+#file-heading{
+    padding-left: 5px;
+}
+
+#icons h2 a{padding-left: 10px;
+}
+
+
+ 

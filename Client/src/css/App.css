@@ -1,0 +1,42 @@
+/* #App_mainDiv{
+  background-image: url("../images/fileShare1628276178059.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 98vh;
+} */
+.droptarget {
+  float: left; 
+  width: 100px; 
+  height: 35px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+#resolution_Message{
+  display:none;
+  /* background-color: #0399be; */
+}
+/* @media screen and (max-width: 1300px) {
+  #App_mainDiv{
+      display: none;
+      overflow: hidden;
+  }
+  #resolution_Message{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #resolution_Message_Image{
+    position: relative;
+    left: 10%;
+    width: 78%;
+  }
+  #resolution_Message_Text{
+      position: relative;
+      left: 12%;
+      font-family: cursive;
+      color: currentcolor;
+      font-size: 2vw;
+  
+  }
+} */

@@ -1,0 +1,28 @@
+#blured_background_mainDiv{
+    width: 100vw;
+    height: 100vh;
+    box-shadow: rgb(0 0 0 / 50%) 0px 2px 15px 0px;
+    background-image: linear-gradient(125deg, rgba(134, 121, 249, 0.05), rgba(113, 255, 151, 0.05));
+    backdrop-filter: blur(10px);
+    background-color: #0001;
+    z-index: 2;
+
+}
+ #blured_background_image {
+    width: 100vw;
+    height: 98vh;
+    overflow: hidden;
+    position: fixed;
+    top: 64px;
+    
+}
+#blured_background_image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    filter: blur(5px) brightness(60%);
+}

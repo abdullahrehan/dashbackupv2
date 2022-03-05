@@ -1,0 +1,10 @@
+#ads_maindiv {
+    position: fixed;
+    width: 25vw;
+    height: 82vh;
+    background-color: #0009;
+    top: 15%;
+    left: 36%;
+    border-radius: 6px;
+    border: 1px solid white;
+}

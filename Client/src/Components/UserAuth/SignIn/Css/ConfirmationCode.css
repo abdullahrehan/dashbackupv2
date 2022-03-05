@@ -1,0 +1,72 @@
+#confirmation_code {
+    width: 438px;
+    height: 400px;
+    background-color: #0009;
+    z-index: 5;
+    position: absolute;
+    top: 21%;
+    left: 34%;
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+}
+
+#confirmation_code_header_text{
+    text-align: center;
+    font-size: 1em;
+    margin-top: 4%;
+    margin-left: 1%;
+}
+
+#confirmation_code_inputs_maindiv{
+    width: 100%;
+    padding-left: 65px;
+    margin-top: 25px;
+}
+
+#confirmation_code_input1{
+    font-size: 2em;
+    font-weight: bolder;
+    margin: 5px;
+    width:60px;
+    height: 60px;
+    background-color: #0005;
+    color: white;
+    margin-left: 10px;
+    text-align: center;
+    border-right: 1px solid teal;
+    border-bottom: 1px solid teal;
+
+}
+
+#confirmation_code_submit_btn{
+    position: relative;
+    left: 38%;
+    top: 6%;
+    width: 110px;
+    height: 50px;
+    
+}
+
+#confirmation_code_incorrect_error{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 27%;
+    bottom: 26%;
+    color: tomato;
+}
+
+#confirmation_code_incomplete_error{
+    position: relative;
+    text-align: center;
+    top: 15%;
+    color: tomato;
+    display: none;
+}
+#confirmation_code_resend_email_text{
+    position: relative;
+    text-align: center;
+    top: 20%;
+    
+}

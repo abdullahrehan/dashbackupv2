@@ -1,0 +1,23 @@
+*{
+  user-select: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#main_div{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+  
+#Header{
+    flex: 1;
+}
+
+#AsideData {
+  display: flex;
+  flex: 10 1;
+  overflow: hidden;
+}
