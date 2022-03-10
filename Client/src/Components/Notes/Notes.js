@@ -1,6 +1,4 @@
 import React, { useState,useEffect,useContext,memo,useCallback, useReducer } from 'react'
-import {TiFolderOpen} from 'react-icons/ti'
-import { FcOpenedFolder } from 'react-icons/fc'; 
 import Context from '../HooksFiles/Context'
 import axios from 'axios' 
 import {MdSelectAll} from 'react-icons/md'; 
@@ -23,8 +21,8 @@ import NotesFunc from './NotesFunc/NotesFunc'
 import NotesReducer from './NotesContext/NotesReducer'
 import {NotesReducerVar} from '../ReducersVar/ReducersVar'
 import NotesContext from './NotesContext/NotesContext'
-import SelectMultiple from '../CommonFiles/CommonComponents/SelectMultiple'
-import Tabs from '../CommonFiles/CommonComponents/Tabs/Tabs'
+import SelectMultiple from '../CommonFiles/CommonComponents/SelectMultiple/SelectMultiple'
+import Tabs from '../CommonFiles/CommonComponents/Tabs/Tabs.jsx'
 import '../../css/DefaultTab.css'
 import '../../css/youtube.css'
 import '../../css/Images.css'
@@ -59,7 +57,7 @@ function Notes() {
         
         foldersData()
         recentFoldersData()
-    //    FilesData()
+        // ImagesDataApi
     
     },[EffectOn,state.onEffect])
 
@@ -108,7 +106,7 @@ function Notes() {
 return (
     <FullScreen isFullScreen={isFullScreen} onChange={(isFull) => { notesDispatch({type:"setisFullScreen",setisFullScreen:isFull}) }}  style={{display:"flex"}} >
 
-    <div id='NotesData-Main-div' >
+    <div id='NotesData-Main-div' onLoad={()=>  dispatch({type:"setloading",setloading:false}) }>
     {/* {!isFullScreen?
 
     <div id="NotesUploads" style={{flex:previewNotes? 3 :1}}>
@@ -141,8 +139,6 @@ return (
 :null}
         {previewNotes?null:
         <>   
-        {/* <div style={{display:showYoutube?"none":"block"}}>
-        </div> */}
 
         <SelectMultiple showYoutube={showYoutube}/>    
         {!isFullScreen?
@@ -162,10 +158,10 @@ return (
         :null}
 
     </> }
-{/*     
+    
     <div id="messages-data"  >
 
-
+{/* 
 {!isFullScreen?
 
     <div style={{display:showYoutube?"none":"flex",flex:1}}>
@@ -174,7 +170,7 @@ return (
         <ViewAllFiles />
         }
 </div>
-:null}
+:null} */}
 
 <AiOutlineYoutube size={50} id="youtube-icon" onClick={ShowYoutubeFunc}/>
 <div style={{display:showYoutube?"block":"none",overflow:"hidden"}}>
@@ -184,14 +180,14 @@ return (
 
         <NotesData/>
 :null}
-        <div id='loader' style={{display:LoadingNotes?'block':'none'}}>
+        {/* <div id='loader' style={{display:LoadingNotes?'block':'none'}}>
 
             <LoadingDiv/>
 
-        </div>
+        </div> */}
 
     </div>
-     */}
+    
     </div>
         
         </div>  

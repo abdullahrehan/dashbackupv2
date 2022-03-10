@@ -34,62 +34,15 @@ flex:1
     right: 0%;
 }
 
-
-#sideIcons_MainDiv{
-    position: absolute;
-    right: 1.4%;
-    top: 22%;
-    width: 15%;
-    height: 18%;
-
+#ImageUpload{ 
+    display: flex;
+    flex: 1 ;
+    margin: 0%;
+    margin-top: .25%;
+    margin-right: .2%;
 }
 
-#selectAll_button_mainDiv{
-    position: absolute;
-    right: 0%;
-    width: 61%;
-    height: 72%;
-    border: 2px solid white;
-    border-top: none;
-    border-right: none;
-    border-bottom-left-radius: 75px;
-}
-#sideIcons_IconsDiv{
-    position: absolute;
-    top: 0%;
-    left: 8%;
-    width: 96%;
-    height: 100%;
-    border: 2px solid white;
-    border-top: none;
-    border-right: none;
-    border-bottom-left-radius: 100px;
-    transition: 0.5s;
-}
-#checkbox_Icon_Main {
-    position: absolute;
-    color: white;
-    cursor: pointer;
-    z-index: 1;
-    top: 6%;
-    width: 22%;
-    height: 22%;
-    left: 5%;
-    filter: grayscale(1);
-}
-#mutiSelect_send_button {
-    position: absolute;
-    color: white;
-    cursor: pointer;
-    z-index: 1;
-    top: 41%;
-    width: 32%;
-    height: 40%;
-    left: 16%;
-    background-color: #0000;
-    border:none;
-    outline: none;
-}
+
 #onLoad_message{
     position: absolute;
     /* top: 2%; */
@@ -98,43 +51,6 @@ flex:1
     bottom: 7%;
     font-size: 1.2vw;
     font-family: cursive;
-}
-#mutiSelect_send_button:hover {
-    color: cadetblue;
-}
-#mutiSelect_selectAll_button {
-    position: absolute;
-    color: white;
-    cursor: pointer;
-    z-index: 1;
-    top: 0%;
-    width: 50%;
-    height: 44%;
-    right: 0%;
-}
-#mutiSelect_selectAll_button:hover {
-    color: cadetblue;
-}
-#mutiSelect_delete_button {
-    position: absolute;
-    color: white;
-    cursor: pointer;
-    z-index: 1;
-    top: 70%;
-    width: 30%;
-    height: 32%;
-    right: 3%;
-}
-
-#mutiSelect_delete_button:hover {
-    color: darkred;
-}
-#ImageUpload{ 
-    display: flex;
-    flex: 1 ;
-    margin: 0%;
-    margin-top: .25%;
-    margin-right: .2%;
 }
 
 

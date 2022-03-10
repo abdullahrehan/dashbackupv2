@@ -37,7 +37,7 @@ function Notes({
 
     const Notes_ViewAllDoc_styles={
         width:ViewAllDoc && previewNotes ?"49%":ViewAllDoc?"28%":"53%",
-        height:ViewAllDoc && previewNotes ?"30%":ViewAllDoc?"35%":'56%',
+        height:ViewAllDoc && previewNotes ?"30%":ViewAllDoc?"160px":'56%',
         // height:ViewAllDoc?"35%":'56%',
         left:ViewAllDoc?"0%":"22%",
         marginLeft:ViewAllDoc?"0%":null,
@@ -85,25 +85,23 @@ function Notes({
         document.getElementById(`textDoc_editIcon${index}`).style.backgroundColor="dimgrey"
     }
 const Preview=(ImageName)=>{
+
     dispatch({type:"setnotes",notes:ImageName})
-    console.log(ImageName)
     dispatch({type:"seteditNotes",editNotes:true})
-    // document.getElementsByClassName(`textDoc_editIcon`)[0].style.backgroundColor="dimgrey"
+
 }
 
 
 const checkbox_styless={
     width:ViewAllDoc?"11%":null,
-    height:ViewAllDoc?"12%":null,
-    left:ViewAllDoc?"3%":null,
-    top:ViewAllDoc?"4%":null,
+    left:ViewAllDoc?"4%":"1%",
+    top:ViewAllDoc?"4%":"3%",
+    height:ViewAllDoc?"13%":null
 }
-console.log(ViewAllDoc)
  
 const checkedImage=(index)=>{
     const element=document.getElementsByClassName(`checkbox${index}`)[0]        
     document.getElementsByClassName(`select_div_text${index}`)[0].innerText=element.checked?'Selected':'Select Image'
-    // console.log(element.checked)
     showAdvanceFeatures()
 }
 
@@ -132,8 +130,7 @@ return (
             style={checkbox_styless}
             type="checkbox"
             className={`checkbox checkbox${index}`}
-            // id="checkbox"
-            onClick={()=>checkedImage(index)}  style={{left:ViewAllDoc?"4%":"1%",top:ViewAllDoc?"4%":"3%",height:ViewAllDoc?"13%":null}} />
+            onClick={()=>checkedImage(index)} />
         <div id='selectMultiple_heading'>{ImageName.heading}</div>
             <p className={`select_div_text${index}`} style={{color:"white",fontSize:ViewAllDoc?"1.4vw":"2.2vw",paddingTop:"5%"}}>
             Select Image

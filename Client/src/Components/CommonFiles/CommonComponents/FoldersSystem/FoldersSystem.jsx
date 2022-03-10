@@ -1,13 +1,12 @@
 import React, { useState,useContext,useRef,useCallback,memo } from 'react'
 import {IoIosArrowBack} from 'react-icons/io'; 
 import {IoIosArrowForward} from 'react-icons/io'; 
-import {HiFolderAdd} from 'react-icons/hi'
-import {MdDeleteSweep} from 'react-icons/md'; 
 import { BsShieldLock } from 'react-icons/bs';  
 import { FcOpenedFolder } from 'react-icons/fc';  
 import Folder from './Images/folderIcon2.png'
 import deleteIcon from './Images/folderDeleteIcon.png'
 import deleteIcon2 from './Images/folderDeleteIcon2.png'
+import FolderAddIcon from './Images/folder-add-icon.png'
 import Securepopups from '../../../AsideDataFiles/Securepopup'
 import FoldersSystemFunc from './FoldersSystemFunc'
 import Context from '../../../HooksFiles/Context'
@@ -21,7 +20,6 @@ function FoldersSystem({EffectOn,setEffectOn,setImagesDataApi,openFolder}) {
     const [writefoldername,setwritefoldername]=useState(false)
     const [deleteSecureFolderPassword,setdeleteSecureFolderPassword]=useState(false)
     const [currentFolder,setcurrentFolder]=useState('MainFolder')
-    const [increaseFolderDiv,setincreaseFolderDiv]=useState(0)
     const [decreaseFolderDiv,setdecreaseFolderDiv]=useState(0)
     const [dragedFoldertoDelete,setdragedFoldertoDelete]=useState()
     const [enterFolderPassword,setenterFolderPassword]=useState(false)
@@ -42,7 +40,8 @@ function FoldersSystem({EffectOn,setEffectOn,setImagesDataApi,openFolder}) {
     const deleteFolderText=useRef()
     const foldersCloseBtn=useRef()
     const folderImg=useRef()
-
+    const folder_System_Main_Div=useRef()
+    const create_folder_icon=useRef()
  
 //------------------------------------------------------Communicating through Api Calls-------------------------------------------------------
 
@@ -51,9 +50,7 @@ function FoldersSystem({EffectOn,setEffectOn,setImagesDataApi,openFolder}) {
 
 
     const increaseButton=()=>{
-        dispatch({type:"setshowHalfFoldersDiv",setshowHalfFoldersDiv:!state.showFoldersDiv})
-        setincreaseFolderDiv(increaseFolderDiv+1)
-        foldersCloseBtn.current.style.display="none"
+
         expandDiv(folderDiv,
                 folders_main_div,
                 arrow_to_increase_folder_div_area,
@@ -61,28 +58,29 @@ function FoldersSystem({EffectOn,setEffectOn,setImagesDataApi,openFolder}) {
                 create_new_folder,
                 folder_text,
                 folder_delete_icon,
-                deleteFolderText)
+                deleteFolderText,
+                foldersCloseBtn,
+                create_folder_icon)
     
     }
 
 
     const shrinkDiv=()=>{
+        
         shrinkDivfunc(folderDiv,
-                      folder_text,
-                      deleteFolderText,
-                      folder_delete_icon,
-                      arrow_to_decrease_folder_div_area,
-                      arrow_to_increase_folder_div_area,
-                      folders_main_div,
-                      create_new_folder)
+                folder_text,
+                deleteFolderText,
+                folder_delete_icon,
+                arrow_to_decrease_folder_div_area,
+                arrow_to_increase_folder_div_area,
+                folders_main_div,
+                create_new_folder,create_folder_icon,foldersCloseBtn)
     }
    
     const decreaseButton=()=>{ 
 
         setdecreaseFolderDiv(decreaseFolderDiv+1)
         shrinkDiv()
-        foldersCloseBtn.current.style.display="block"
-
     
     }
 
@@ -129,6 +127,11 @@ function FoldersSystem({EffectOn,setEffectOn,setImagesDataApi,openFolder}) {
         
         }
     }
+
+    const closeFolderFun=()=>{
+        folder_System_Main_Div.current.style.zIndex="2"
+        openFolder()
+    }
         
 
 // ------------------------------------ Others Function ------------------------------------
@@ -148,8 +151,8 @@ function FoldersSystem({EffectOn,setEffectOn,setImagesDataApi,openFolder}) {
     return (
         <>
        
-       <FcOpenedFolder size={45} id='open_folder_icon' style={{top:"5%",right:"2%"}} onClick={openFolder} style={{display:foldersDiv?'none':'block'}}/>
-        <div id="folder_System_Main_Div" style={{zIndex:foldersDiv ? 2:0}} >
+       <FcOpenedFolder size={45} id='open_folder_icon' style={{display:foldersDiv?'none':'block'}} onClick={openFolder}/>
+        <div id="folder_System_Main_Div" ref={folder_System_Main_Div} style={{zIndex:0}} >
            
        
             {/* ---------------arrow to increase folder div Icon---------------  */}
@@ -172,8 +175,10 @@ function FoldersSystem({EffectOn,setEffectOn,setImagesDataApi,openFolder}) {
             {/* -------------------- Create New Folder Icon --------------------  */}
 
                 <div id='create_new_folder' ref={create_new_folder}  >
-                    <div className="folder-close-div" style={{display:foldersDiv?"block":expandDiv?"none":"block"}} ref={foldersCloseBtn} onClick={openFolder}><FcOpenedFolder className="folder-close-icon"/></div>
-                    <HiFolderAdd id="create_folder_icon" onClick={writeFolderName}/>
+                    <div className="folder-close-div" style={{display:foldersDiv?"block":expandDiv?"none":"block"}} ref={foldersCloseBtn} onClick={closeFolderFun}><FcOpenedFolder className="folder-close-icon"/></div>
+                    
+                    <img src={FolderAddIcon} className="create_folder_icon" ref={create_folder_icon} onClick={writeFolderName}/>
+                    {/* <HiFolderAdd id="create_folder_icon" onClick={writeFolderName}/> */}
                     <span id="folder_names_heading_text" ref={folder_text}>Folders</span>
                     <span id="folders_Delete_Icon" onDragOver={(e)=>{e.preventDefault()}} onDrop={()=>Drop_FolderDelete_icon(folder_delete_icon,dragedFoldertoDelete,setdeleteSecureFolderPassword)} ref={folder_delete_icon}>
                     <img src={folderDeleteIcon} className="folder-delete-Icon" onDragOver={()=>setfolderDeleteIcon(deleteIcon2)} onDragLeave={()=>setfolderDeleteIcon(deleteIcon)}/>

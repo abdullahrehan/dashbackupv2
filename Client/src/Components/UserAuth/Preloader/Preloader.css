@@ -7,65 +7,7 @@
     z-index: 1122;
     position: fixed;
 }
-#loading_loader_div{
-    position: absolute;
-    width: 6.5%;
-    height: 14%;
-}
 
-
-
-#loading_loader1 {
-  position: absolute;
-  top: 0;
-  left: 0%;
-  animation-name: rotate-s-loader1;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-}
-  @keyframes rotate-s-loader1 {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-  }
-  #loading_loader2 {
-    position: absolute;
-    right: -10%;
-    top: -11%;
-    animation-name: rotate-s-loader2;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-}
-  @keyframes rotate-s-loader2 {
-      from {
-        transform: rotate(0);
-      }
-      to {
-        transform: rotate(-360deg);
-      }
-    }
-    #loading_loader3 {
-      position: absolute;
-      left: 31%;
-      bottom: -3%;
-      animation-name: rotate-s-loader3;
-      animation-iteration-count: infinite;
-      animation-duration: 5s;
-      animation-timing-function: linear;
-  }
-  @keyframes rotate-s-loader3 {
-      from {
-        transform: rotate(0);
-      }
-      to {
-        transform: rotate(-360deg);
-      }
-    }
 #loading_Centered_Div{
   display: flex;
   flex-direction: column;
@@ -76,14 +18,72 @@
   backdrop-filter: blur(10px);
   color:white;
   box-shadow: rgb(0 0 0 / 50%) 0px 2px 15px 0px;
-  background-image: linear-gradient(125deg, rgba(134, 121, 249, 0.05), rgba(113, 255, 151, 0.05));}
-
-#loading_textArea {
-  position: relative;
-  font-size: 1.2vw;
-  top: 12%;
-  left: 2%;
+  background-image: linear-gradient(125deg, rgba(134, 121, 249, 0.05), rgba(113, 255, 151, 0.05));
 }
+
+#loading_loader_div{
+    position: absolute;
+    width: 6.5%;
+    height: 14%;
+}
+
+#loading_loader1 {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  animation-name: rotate-s-loader1;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate-s-loader1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loading_loader2 {
+    position: absolute;
+    right: -10%;
+    top: -11%;
+    animation-name: rotate-s-loader2;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate-s-loader2 {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+}
+
+#loading_loader3 {
+      position: absolute;
+      left: 31%;
+      bottom: -3%;
+      animation-name: rotate-s-loader3;
+      animation-iteration-count: infinite;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+}
+
+@keyframes rotate-s-loader3 {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+  }
+
 .dashTextImg {
   width: 28%;
   position: absolute;
@@ -91,36 +91,9 @@
   left: 36%;
 } 
 
-
-
-/* 
-@media  (min-width:1300px) and (max-width:1470px){  
-
-  #loading_loader_div {
-    position: absolute;
-    width: 7.5vw;
-    height: 16.3vh;
-  }
+#loading_textArea {
+  position: relative;
+  font-size: 1.2vw;
+  top: 12%;
+  left: 2%;
 }
-
-@media  (min-width:1390px) and (max-width:1490px){  
-  #loading_loader_div {
-      position: absolute;
-      width: 7.1vw;
-      height: 16.3vh;
-}
-}
-@media  (min-width:1490px) and (max-width:1500px){  
-  #loading_loader_div {
-   position: absolute;
-   width: 6.8vw;
-   height: 16.3vh;
-}
-}
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-    #Header{
-    display: none;
-    }
-  }
- */

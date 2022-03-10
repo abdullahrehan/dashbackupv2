@@ -16,12 +16,16 @@
 
 #arrow_to_increase_folder_div {
     position: fixed;
-    right: 10.5%;
+    right: 9.5%;
     z-index: 5;
     top: 17%;
     cursor: pointer;
     width: 3%;
     display: none;
+}
+#arrow_to_increase_folder_div:hover {
+    color: cadetblue;
+
 }
 
 #Folders_Name_Main_Div {
@@ -50,17 +54,26 @@
     cursor: pointer;
     
 }
-
-#open_folder_icon{
-
-    position:absolute;
-    color:white;
-    cursor:pointer;
-    z-index:1;
-    top:6%;
-    right:2%
+#open_folder_icon {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    height: 48px;
+    width: 50px;
+    top: 6%;
+    right: 3%;
+    display: block;
+    border-radius: 33px;
+    padding: 3px;
 
 }
+#open_folder_icon:hover {
+    background-color: cadetblue;
+    border: 3px solid;
+    border-left: none;
+    border-top: none;
+    }
 #Folders_Name_Main_Div::-webkit-scrollbar {
 
     width: 10px;
@@ -82,16 +95,14 @@
 
 #arrow_to_decrease_folder_div_area:hover{
 
-    color: darkslategray;
+    color: cadetblue;
 
 }
  
 
 #create_new_folder {
     font-size: 3.8vw;
-    border-bottom: 1px solid black;
     position: relative;
-    /* overflow: hidden; */
     top: -2.2%;
     width: 110%;
     right: 10%;
@@ -101,11 +112,28 @@
     cursor: pointer;
     color: darkslategrey;
     position: absolute;
-    top: 20%;
+    top: 23%;
     right: 32%;
 }
+.create_folder_icon {
+
+    cursor: pointer;
+    color: darkslategrey;
+    position: absolute;
+    top: 29%;
+    right: 32%;
+    width: 52px;
+    height: 54px;
+    padding: 7px;
+    padding-bottom: 5px;
+    cursor: pointer;
+
+}           
+.create_folder_icon:hover{
+    background-color: cadetblue;
+}
 .folder-close-div {
-    width: 28%;
+    width: 44px;
     background-color: #0000;
     border-radius: 37px;
     height: 47%;
@@ -119,7 +147,7 @@
     transform: rotate(45deg);
 }
 .folder-close-div:hover {
-    background-color: white;
+    background-color: cadetblue;
     cursor: pointer;
 }
     .folder-close-icon {
@@ -151,9 +179,9 @@
     width: 15%;
     position: relative;
     left: 0%;
-    bottom: 36%;
-    width: 75%;
-    height: 85%;
+    bottom: 41%;
+    width: 56%;
+    height: 70%;
 }
 #folders_main_div{
 

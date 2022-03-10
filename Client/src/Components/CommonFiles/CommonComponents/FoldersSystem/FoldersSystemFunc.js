@@ -56,7 +56,7 @@ const Drop_FolderDelete_icon=(folder_delete_icon,dragedFoldertoDelete,setdeleteS
     
 // ---------------------------Fuction call when User want to Expand the Folder Div---------------------------
     
-const expandDiv=useCallback((folderDiv,folders_main_div,arrow_to_increase_folder_div_area,arrow_to_decrease_folder_div_area,create_new_folder,folder_text,folder_delete_icon,deleteFolderText)=>{
+const expandDiv=useCallback((folderDiv,folders_main_div,arrow_to_increase_folder_div_area,arrow_to_decrease_folder_div_area,create_new_folder,folder_text,folder_delete_icon,deleteFolderText,foldersCloseBtn,create_folder_icon)=>{
     
     folderDiv.current.style.width="49.7%";
     folders_main_div.current.style.display="flex";
@@ -73,6 +73,10 @@ const expandDiv=useCallback((folderDiv,folders_main_div,arrow_to_increase_folder
     folderDiv.current.style.zIndex=2;
     folder_delete_icon.current.style.display="block";
     deleteFolderText.current.style.display="block";
+    foldersCloseBtn.current.style.display="none"
+    create_folder_icon.current.style.right="81%"
+
+    dispatch({type:"setshowHalfFoldersDiv",setshowHalfFoldersDiv:!state.showFoldersDiv})
     
     },[state.showHalfFoldersDiv])
 
@@ -94,13 +98,15 @@ const expandDiv=useCallback((folderDiv,folders_main_div,arrow_to_increase_folder
     
 // ---------------------------Fuction call when User want to Close the Folder Div---------------------------
     
-const shrinkDivfunc=useCallback((folderDiv,folder_text,deleteFolderText,folder_delete_icon,arrow_to_decrease_folder_div_area,arrow_to_increase_folder_div_area,folders_main_div,create_new_folder)=>{
+const shrinkDivfunc=useCallback((folderDiv,folder_text,deleteFolderText,folder_delete_icon,arrow_to_decrease_folder_div_area,arrow_to_increase_folder_div_area,folders_main_div,create_new_folder,create_folder_icon,foldersCloseBtn)=>{
     
     folderDiv.current.style.width="9.2%";
     folder_text.current.style.display="none";
     deleteFolderText.current.style.display="none";
     folder_delete_icon.current.style.display="none";
     arrow_to_decrease_folder_div_area.current.style.display='none';
+    create_folder_icon.current.style.right="30%"
+    foldersCloseBtn.current.style.display="block"
 
     setTimeout(() => {
     

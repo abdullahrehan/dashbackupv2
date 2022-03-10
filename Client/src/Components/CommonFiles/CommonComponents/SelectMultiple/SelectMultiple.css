@@ -1,0 +1,96 @@
+
+
+#sideIcons_MainDiv{
+    position: absolute;
+    right: 4%;
+    top: 14%;
+    width: 15%;
+    height: 18%;
+}
+
+#selectAll_button_mainDiv{
+    position: absolute;
+    right: 0%;
+    width: 61%;
+    height: 72%;
+    border: 2px solid white;
+    border-top: none;
+    border-right: none;
+    border-bottom-left-radius: 75px;
+}
+
+#mutiSelect_selectAll_button {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    top: 0%;
+    width: 50%;
+    height: 44%;
+    right: 0%;
+    color: rgb(255, 202, 40);
+}
+
+#mutiSelect_selectAll_button:hover {
+    color: cadetblue;
+}
+
+#sideIcons_IconsDiv{
+    position: absolute;
+    top: 0%;
+    left: 8%;
+    width: 96%;
+    height: 100%;
+    border: 2px solid white;
+    border-top: none;
+    border-right: none;
+    border-bottom-left-radius: 100px;
+    transition: 0.5s;
+}
+
+#mutiSelect_send_button {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    top: 41%;
+    width: 32%;
+    height: 40%;
+    left: 16%;
+    background-color: #0000;
+    border:none;
+    outline: none;
+}
+
+#mutiSelect_send_button:hover {
+    color: cadetblue;
+}
+
+#mutiSelect_delete_button {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    top: 70%;
+    width: 30%;
+    height: 32%;
+    right: 3%;
+}
+
+#mutiSelect_delete_button:hover {
+    color: darkred;
+}
+
+#checkbox_Icon_Main {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    top: 0%;
+    width: 22%;
+    height: 22%;
+    left: 5%;
+    filter: grayscale(1);
+}
+
+
