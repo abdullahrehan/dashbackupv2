@@ -37,12 +37,10 @@ function Notes({
 
     const Notes_ViewAllDoc_styles={
         width:ViewAllDoc && previewNotes ?"49%":ViewAllDoc?"28%":"53%",
-        height:ViewAllDoc && previewNotes ?"30%":ViewAllDoc?"160px":'56%',
-        // height:ViewAllDoc?"35%":'56%',
+        height:ViewAllDoc && previewNotes ?"30%":ViewAllDoc?"35%":'56%',
         left:ViewAllDoc?"0%":"22%",
         marginLeft:ViewAllDoc?"0%":null,
         marginTop:ViewAllDoc?"3.5%":"5%",
-        // top:"-2%",
         top:ViewAllDoc && previewNotes?"0%":null}
 
     const notes_heading_ViewAllDoc_styles={

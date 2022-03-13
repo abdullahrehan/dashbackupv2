@@ -172,14 +172,14 @@ return (
 </div>
 :null} */}
 
-<AiOutlineYoutube size={50} id="youtube-icon" onClick={ShowYoutubeFunc}/>
-<div style={{display:showYoutube?"block":"none",overflow:"hidden"}}>
+{/* <AiOutlineYoutube size={50} id="youtube-icon" onClick={ShowYoutubeFunc}/> */}
+{/* <div style={{display:showYoutube?"block":"none",overflow:"hidden"}}>
     <Youtube />
     </div>
     {!isFullScreen?
 
         <NotesData/>
-:null}
+:null} */}
         {/* <div id='loader' style={{display:LoadingNotes?'block':'none'}}>
 
             <LoadingDiv/>

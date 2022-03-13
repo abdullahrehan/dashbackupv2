@@ -3,11 +3,25 @@ import Context from '../../../HooksFiles/Context'
 import axios from 'axios' 
 
 
-function FoldersSystemFunc(decreaseFolderDiv) {
+function FoldersSystemFunc(decreaseFolderDiv,folderNameInputRef,references) {
 
     const {state,dispatch}=useContext(Context) 
     const tabs=state.currentTabData
 
+    const {
+        folderDiv,
+        folders_main_div,
+        arrow_to_increase_folder_div_area,
+        arrow_to_decrease_folder_div_area,
+        create_new_folder,
+        folder_text,
+        folder_delete_icon,
+        deleteFolderText,
+        foldersCloseBtn,
+        folderImg,
+        folder_System_Main_Div,
+        create_folder_icon,}
+        =references
 // -----------------Requesting to Delete Folder----------------//
 
 const Drop_FolderDelete_icon=(folder_delete_icon,dragedFoldertoDelete,setdeleteSecureFolderPassword)=>{
@@ -56,7 +70,7 @@ const Drop_FolderDelete_icon=(folder_delete_icon,dragedFoldertoDelete,setdeleteS
     
 // ---------------------------Fuction call when User want to Expand the Folder Div---------------------------
     
-const expandDiv=useCallback((folderDiv,folders_main_div,arrow_to_increase_folder_div_area,arrow_to_decrease_folder_div_area,create_new_folder,folder_text,folder_delete_icon,deleteFolderText,foldersCloseBtn,create_folder_icon)=>{
+const expandDiv=useCallback(()=>{
     
     folderDiv.current.style.width="49.7%";
     folders_main_div.current.style.display="flex";
@@ -80,7 +94,7 @@ const expandDiv=useCallback((folderDiv,folders_main_div,arrow_to_increase_folder
     
     },[state.showHalfFoldersDiv])
 
-    const enterFolder=(folder_datass,EffectOn,setEffectOn,setImagesDataApi)=>{
+    const enterFolder=(folder_datass,EffectOn,setEffectOn,setImagesDataApi,shrinkDiv)=>{
     
         axios.post("/recentFolders",
         {email:state.accDataVerify.email,
@@ -93,12 +107,14 @@ const expandDiv=useCallback((folderDiv,folders_main_div,arrow_to_increase_folder
         setImagesDataApi([])
         dispatch({type:"setcurrentFolder",currentFolderValue:folder_datass.name})
         dispatch({type:"setonEffect",setonEffect:state.onEffect+1})
+        dispatch({type:"setloading",setloading:true})
+        shrinkDiv()
     }
 
     
 // ---------------------------Fuction call when User want to Close the Folder Div---------------------------
     
-const shrinkDivfunc=useCallback((folderDiv,folder_text,deleteFolderText,folder_delete_icon,arrow_to_decrease_folder_div_area,arrow_to_increase_folder_div_area,folders_main_div,create_new_folder,create_folder_icon,foldersCloseBtn)=>{
+const shrinkDivfunc=useCallback(()=>{
     
     folderDiv.current.style.width="9.2%";
     folder_text.current.style.display="none";
@@ -126,8 +142,125 @@ const shrinkDivfunc=useCallback((folderDiv,folder_text,deleteFolderText,folder_d
     },[decreaseFolderDiv])
     
 
+    const setfoldernamepopup=(value,setwritefoldername)=>{setwritefoldername(value)}
 
-    return ({Drop_FolderDelete_icon,expandDiv,enterFolder,shrinkDivfunc})
+
+    const createNewFolder=useCallback((folderNameInputRef,setwritefoldername)=>{
+
+        if(folderNameInputRef.current.value!==''){
+                
+            axios.post("/createfolder",
+            {email:state.accDataVerify.email,
+            newfolderName:folderNameInputRef.current.value,
+            MainfolderName:state.currentTab,
+            folder:state.currentFolder})
+         
+            }
+    
+            dispatch({type:"setonEffect",setonEffect:state.onEffect+1})
+            setwritefoldername(false)
+    
+        },[folderNameInputRef])
+
+
+
+        const deleteSecureFolder=useCallback(()=>{
+
+            // const deleteFromRecentFolder=tabs.findIndex(data=>data.name===dragedFoldertoDelete.name)
+            // const index=tabs.findIndex(data=>data.name===dragedFoldertoDelete.name)
+            // const folder=tabs[index+1] 
+    
+            if(state.accDataVerify.folderPassword===folderPassword){
+             
+            axios.post("/deleteFolder",
+            {email:state.accDataVerify.email,
+            folderName:dragedFoldertoDelete.name,
+            currentFolder:state.currentFolder,
+            currentTab:state.currentTab})
+     
+            dispatch({type:"setonEffect",setonEffect:state.onEffect+1})
+            crossFunctiondeleteFolder(false);setfolderPassword('')
+            // setdecreaseFolderDiv()
+        }
+            else{alert('password is incorrect');}
+        
+        },[folderPassword])
+
+
+    const closeFolderFun=(folder_System_Main_Div,openFolder)=>{
+        folder_System_Main_Div.current.style.zIndex="2"
+        openFolder()
+    }
+
+    
+    const setenterFolderPasswordsValue=(value,setenterFolderPassword)=>{setenterFolderPassword(value)}    
+  
+    
+    const enterFolderPasword=(folder_datass,setenterFolderPassword,setcurrentFolder)=>{
+    
+        setenterFolderPassword(true);
+        setcurrentFolder(folder_datass.name);
+        
+    }
+
+    
+    const folderOpen=(folder_datass,enterToNewFolder)=>{ 
+
+        enterToNewFolder(folder_datass); 
+        dispatch({type:"setshowFoldersDiv",setshowFoldersDiv:false})
+
+    }
+
+
+    const decreaseButton=(shrinkDiv,decreaseFolderDiv,setdecreaseFolderDiv)=>{ 
+
+        setdecreaseFolderDiv(decreaseFolderDiv+1)
+        shrinkDiv()
+    
+    }
+
+    
+    const enterToNewFolder=(folder_datass,setcurrentFolder)=>{
+        
+        setcurrentFolder(folder_datass.name);
+        dispatch({type:"setcurrentFolder",currentFolderValue:folder_datass.name});
+        dispatch({type:"setonEffect",setonEffect:state.onEffect+1})
+    }
+
+    const openfolder=(folder_datass,EffectOn,setEffectOn,setImagesDataApi,setenterFolderPassword,setcurrentFolder)=>{
+   
+        if(folder_datass.secure===false){
+           
+            enterFolder(folder_datass,EffectOn,setEffectOn,setImagesDataApi,shrinkDivfunc)          
+         
+        }
+    
+        else if(state.currentFolder!==folder_datass.name){
+        
+        folder_datass.secure===true?
+        enterFolderPasword(folder_datass,setenterFolderPassword,setcurrentFolder):
+        folderOpen(folder_datass,enterToNewFolder(folder_datass,setcurrentFolder))
+        
+        }
+    }
+
+
+    return ({
+        Drop_FolderDelete_icon,
+        expandDiv,
+        enterFolder,
+        createNewFolder,
+        shrinkDivfunc,
+        closeFolderFun,
+        setenterFolderPasswordsValue,
+        setfoldernamepopup,
+        enterFolderPasword,
+        folderOpen,
+        decreaseButton,
+        enterToNewFolder,
+        openfolder
+    
+    })
 }
 
 export default FoldersSystemFunc
